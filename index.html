@@ -263,6 +263,74 @@
             border-radius: 8px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.05);
             border-left: 4px solid var(--kuai-green);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(46, 204, 113, 0.15);
+            background-color: #fafdfb;
+        }
+
+        /* 點擊播放的提示小標籤 */
+        .play-hint {
+            position: absolute;
+            bottom: 15px;
+            right: 15px;
+            font-size: 12px;
+            color: var(--kuai-green);
+            font-weight: bold;
+            opacity: 0.7;
+        }
+
+        .testimonial-card:hover .play-hint {
+            opacity: 1;
+        }
+
+        /* 本機影片彈窗遮罩樣式 */
+        .video-modal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.8);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .modal-content {
+            width: 100%;
+            max-width: 800px;
+            background: #000;
+            border-radius: 10px;
+            position: relative;
+            box-shadow: 0 0 30px rgba(46, 204, 113, 0.5);
+            overflow: hidden;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: -40px; right: 0;
+            color: white;
+            font-size: 28px;
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+        }
+
+        .video-wrapper video {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: #000;
         }
 
         /* 頁尾 */
@@ -311,31 +379,4 @@
             </div>
             <div class="product-card">
                 <h3>🛡️ 科技能量御守貼紙</h3>
-                <p>將乖乖圖騰與半導體晶片線條融合設計，具備強大數位除噪防護。貼在筆電、提款機或路由器上，提供 24 小時物理級防當機結界。</p>
-            </div>
-        </div>
-    </section>
 
-    <!-- 聯名款主機商品設計專區 -->
-    <section id="pc-design" style="background-color: #f0fdf4; max-width: 100%; width: 100%;">
-        <div style="max-width: 1200px; margin: 0 auto;">
-            <h2 class="section-title">聯名款旗艦主機商品設計</h2>
-            <div class="pc-design-container">
-                
-                <!-- 左側：直接引入你目前上傳的產品圖片 -->
-                <div class="pc-visual">
-                    <div style="position: absolute; top: 15px; left: 15px; background: rgba(46, 204, 113, 0.2); color: var(--kuai-green); padding: 3px 10px; border-radius: 5px; font-size: 12px; font-weight: bold;">OFFICIAL RENDERING</div>
-                    <!-- 💡 這裡已經自動將檔名修正為你的圖片檔名囉！ -->
-                    <img src="image_d34ccc6e.png" alt="乖乖聯名吉祥物旗艦主機" class="pc-image">
-                    <h3 style="margin-bottom: 5px; text-align: center;">GreenLight AI Mascot Edition</h3>
-                    <p style="font-size: 14px; color: #aaa; text-align: center; max-width: 320px;">頂部搭載實體大公仔，結合液晶動態水冷螢幕與獨家乖乖鎮邪防護艙。</p>
-                </div>
-
-                <!-- 右側：主機規格詳細說明 -->
-                <div class="pc-info">
-                    <span style="color: var(--kuai-green); font-weight: bold; font-size: 14px; letter-spacing: 2px;">限量極致工藝</span>
-                    <h3 style="font-size: 28px; margin: 5px 0 15px 0; color: var(--tech-dark);">「極致綠燈」AI 智能超頻水冷主機</h3>
-                    <p style="color: #666; font-size: 15px;">這不是普通的電腦，這是民俗工程學與微電子技術的結晶。我們在側透玻璃機殼內設計了<strong>「實體乖乖專屬防潮避震艙」</strong>，並配備<strong>「經典乖乖吉祥物實體公仔」</strong>，確保您的伺服器隨時處於「完美綠燈狀態」。</p>
-                    
-                    <table class="tech-specs-table">
-                        <tr>
