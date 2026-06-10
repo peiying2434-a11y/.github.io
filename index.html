@@ -1,52 +1,138 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>乖乖 × Kuai-PC 聯名限定主機</title>
+
+<title>乖乖 × Kuai-PC｜GreenLight AI Next Edition</title>
 
 <style>
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:"Microsoft JhengHei",sans-serif;
+    scroll-behavior:smooth;
 }
 
 body{
-    background:#0d1117;
+    background:#070b11;
     color:white;
-    line-height:1.8;
+    font-family:"Microsoft JhengHei",sans-serif;
+    overflow-x:hidden;
 }
 
-header{
-    background:linear-gradient(135deg,#1faa59,#0f5132);
-    padding:80px 20px;
+/* ===== 導覽列 ===== */
+
+nav{
+    position:fixed;
+    width:100%;
+    top:0;
+    z-index:999;
+    backdrop-filter:blur(10px);
+    background:rgba(0,0,0,.5);
+    padding:20px 8%;
+}
+
+nav ul{
+    display:flex;
+    justify-content:flex-end;
+    gap:30px;
+    list-style:none;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#50fa7b;
+}
+
+/* ===== Hero ===== */
+
+.hero{
+    min-height:100vh;
+
+    background:
+    linear-gradient(
+    rgba(0,0,0,.7),
+    rgba(0,0,0,.8)),
+    url("image_d34ccc6e.png");
+
+    background-size:cover;
+    background-position:center;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
     text-align:center;
+
+    padding:40px;
 }
 
-header h1{
-    font-size:3rem;
-    margin-bottom:20px;
+.hero-content{
+    max-width:900px;
 }
 
-header p{
+.hero h1{
+    font-size:5rem;
+    color:#50fa7b;
+
+    text-shadow:
+    0 0 15px #50fa7b,
+    0 0 30px #50fa7b;
+}
+
+.hero h2{
+    font-size:2rem;
+    margin:20px 0;
+}
+
+.hero p{
     font-size:1.2rem;
-    max-width:800px;
-    margin:auto;
+    opacity:.9;
 }
+
+.btn{
+    display:inline-block;
+    margin-top:30px;
+    padding:15px 35px;
+
+    background:#50fa7b;
+    color:black;
+
+    border-radius:50px;
+
+    text-decoration:none;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:translateY(-5px);
+
+    box-shadow:
+    0 0 20px #50fa7b;
+}
+
+/* ===== 通用 ===== */
 
 section{
-    max-width:1200px;
-    margin:auto;
-    padding:80px 20px;
+    padding:100px 10%;
 }
 
-h2{
+.section-title{
+    text-align:center;
+    font-size:3rem;
     color:#50fa7b;
-    margin-bottom:30px;
-    font-size:2rem;
+    margin-bottom:50px;
 }
+
+/* ===== 公司介紹 ===== */
 
 .company-grid{
     display:grid;
@@ -55,234 +141,508 @@ h2{
 }
 
 .card{
-    background:#161b22;
-    border:1px solid #2ea043;
-    border-radius:15px;
-    padding:25px;
+    background:#111827;
+
+    border:1px solid rgba(80,250,123,.3);
+
+    border-radius:20px;
+
+    padding:30px;
+
+    transition:.4s;
 }
 
-.product-showcase{
+.card:hover{
+    transform:translateY(-10px);
+
+    box-shadow:
+    0 0 30px rgba(80,250,123,.3);
+}
+
+/* ===== 產品 ===== */
+
+.product{
     display:grid;
     grid-template-columns:1fr 1fr;
-    gap:40px;
+    gap:60px;
     align-items:center;
 }
 
-.product-showcase img{
+.product img{
     width:100%;
     border-radius:20px;
-    box-shadow:0 0 25px rgba(80,250,123,.3);
+
+    animation:
+    float 4s ease-in-out infinite;
 }
 
-.specs ul{
+@keyframes float{
+
+0%{
+transform:translateY(0);
+}
+
+50%{
+transform:translateY(-15px);
+}
+
+100%{
+transform:translateY(0);
+}
+
+}
+
+.spec-list{
     list-style:none;
 }
 
-.specs li{
-    padding:12px;
-    margin-bottom:10px;
-    background:#161b22;
+.spec-list li{
+    background:#111827;
+    margin-bottom:15px;
+    padding:15px;
     border-left:4px solid #50fa7b;
 }
 
-.highlight{
-    color:#50fa7b;
-    font-weight:bold;
+/* ===== 功能特色 ===== */
+
+.feature-grid{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(250px,1fr));
+
+gap:25px;
+
 }
 
+.feature{
+
+background:#111827;
+
+padding:30px;
+
+border-radius:15px;
+
+text-align:center;
+
+transition:.3s;
+
+font-size:1.1rem;
+
+}
+
+.feature:hover{
+
+transform:translateY(-10px);
+
+box-shadow:
+0 0 25px rgba(80,250,123,.4);
+
+}
+
+/* ===== 影片 ===== */
+
 .video-container{
-    background:#161b22;
-    padding:20px;
-    border-radius:20px;
+
+max-width:1000px;
+
+margin:auto;
+
 }
 
 video{
-    width:100%;
-    border-radius:15px;
+
+width:100%;
+
+border-radius:20px;
+
+box-shadow:
+0 0 30px rgba(80,250,123,.25);
+
+}
+
+/* ===== 評價 ===== */
+
+.reviews{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(300px,1fr));
+
+gap:25px;
+
 }
 
 .review{
-    margin-top:25px;
-    padding:20px;
-    background:#0f1720;
-    border-left:4px solid #50fa7b;
-    border-radius:10px;
+
+background:#111827;
+
+padding:25px;
+
+border-radius:15px;
+
+border-left:4px solid #50fa7b;
+
 }
+
+/* ===== CTA ===== */
+
+.cta{
+
+text-align:center;
+
+background:
+linear-gradient(
+135deg,
+#0f5132,
+#1faa59
+);
+
+}
+
+.cta h2{
+
+font-size:3rem;
+
+margin-bottom:20px;
+
+}
+
+.price{
+
+font-size:2rem;
+
+font-weight:bold;
+
+margin-bottom:20px;
+
+}
+
+/* ===== Footer ===== */
 
 footer{
-    background:#111;
-    text-align:center;
-    padding:30px;
-    color:#999;
+
+background:#050505;
+
+text-align:center;
+
+padding:40px;
+
+color:#999;
+
 }
 
-button{
-    margin-top:20px;
-    background:#50fa7b;
-    color:black;
-    border:none;
-    padding:15px 30px;
-    border-radius:50px;
-    cursor:pointer;
-    font-size:1rem;
-    font-weight:bold;
-    transition:.3s;
+/* ===== 動畫 ===== */
+
+.fade{
+
+opacity:0;
+
+transform:translateY(40px);
+
+transition:1s;
+
 }
 
-button:hover{
-    transform:translateY(-3px);
-    box-shadow:0 0 15px #50fa7b;
+.show{
+
+opacity:1;
+
+transform:translateY(0);
+
 }
+
+/* ===== RWD ===== */
 
 @media(max-width:900px){
 
-.product-showcase{
-    grid-template-columns:1fr;
+.hero h1{
+font-size:3rem;
 }
 
-header h1{
-    font-size:2.2rem;
+.product{
+
+grid-template-columns:1fr;
+
 }
 
 }
+
 </style>
 </head>
+
 <body>
 
-<header>
-    <h1>乖乖 × Kuai-PC</h1>
-    <h2>GreenLight AI Next Edition</h2>
+<nav>
+<ul>
+<li><a href="#about">公司介紹</a></li>
+<li><a href="#product">產品介紹</a></li>
+<li><a href="#features">特色功能</a></li>
+<li><a href="#video">使用心得</a></li>
+</ul>
+</nav>
 
-    <p>
-        全台首款結合「工程師信仰」與高效能運算的聯名主機。
-        將乖乖文化正式帶入電競與AI工作站領域，
-        讓每一台電腦都能穩定運作、不當機、不藍屏。
-    </p>
+<!-- Hero -->
 
-    <button onclick="scrollToProduct()">
-        立即了解產品
-    </button>
-</header>
+<section class="hero">
 
-<section>
-    <h2>公司介紹</h2>
+<div class="hero-content">
 
-    <div class="company-grid">
+<h1>乖乖 × Kuai-PC</h1>
 
-        <div class="card">
-            <h3>乖乖股份有限公司</h3>
-            <p>
-                台灣知名零食品牌，
-                其綠色乖乖更被廣泛視為工程師、
-                機房與科技業的「穩定運作守護神」。
-            </p>
-        </div>
+<h2>GreenLight AI Next Edition</h2>
 
-        <div class="card">
-            <h3>Kuai-PC 電腦專賣公司</h3>
-            <p>
-                專注於客製化電競主機、
-                AI工作站與高效能電腦組裝，
-                提供企業與個人用戶最佳運算解決方案。
-            </p>
-        </div>
+<p>
+第一台受到工程師信仰加持的 AI 工作站
+</p>
 
-    </div>
+<a href="#product" class="btn">
+探索產品
+</a>
+
+</div>
+
 </section>
 
-<section id="product">
-    <h2>聯名產品介紹</h2>
+<!-- 公司介紹 -->
 
-    <div class="product-showcase">
+<section id="about" class="fade">
 
-        <img src="image_d34ccc6e.png" alt="乖乖聯名主機">
+<h2 class="section-title">
+聯名品牌介紹
+</h2>
 
-        <div class="specs">
+<div class="company-grid">
 
-            <h3 class="highlight">
-                GreenLight AI Next Edition
-            </h3>
+<div class="card">
 
-            <ul>
-                <li>🟢 限定乖乖綠金屬機殼</li>
-                <li>🟢 RGB 綠光同步燈效</li>
-                <li>🟢 側邊透明乖乖展示艙</li>
-                <li>🟢 AI 工作站等級水冷散熱</li>
-                <li>🟢 高階顯示卡支援 AI 與遊戲</li>
-                <li>🟢 聯名限定開機動畫</li>
-                <li>🟢 工程師認證穩定BUFF +100%</li>
-            </ul>
+<h3>乖乖股份有限公司</h3>
 
-        </div>
+<br>
 
-    </div>
+<p>
+台灣最具代表性的國民零食品牌之一。
+綠色乖乖更成為科技圈著名都市傳說，
+從伺服器機房到實驗室都能看見它的身影。
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Kuai-PC 電腦專賣公司</h3>
+
+<br>
+
+<p>
+專注於高效能電競主機、
+AI 工作站與企業級運算設備，
+致力於打造穩定可靠的運算體驗。
+</p>
+
+</div>
+
+</div>
+
 </section>
 
-<section>
-    <h2>為什麼要和乖乖聯名？</h2>
+<!-- 產品 -->
 
-    <div class="card">
-        <p>
-            在台灣科技圈流傳著一個有趣傳說：
-            只要在設備旁放上一包綠色乖乖，
-            機器就會乖乖運作。
+<section id="product" class="fade">
 
-            從伺服器機房、半導體設備到學校電腦教室，
-            都能看到綠色乖乖的身影。
+<h2 class="section-title">
+GreenLight AI Next Edition
+</h2>
 
-            因此 Kuai-PC 與乖乖合作，
-            將這項工程師文化正式設計進主機之中，
-            打造最具台灣特色的聯名電腦。
-        </p>
-    </div>
+<div class="product">
+
+<img src="image_d34ccc6e.png">
+
+<div>
+
+<ul class="spec-list">
+
+<li>🟢 限定乖乖綠金屬機殼</li>
+
+<li>🟢 RGB 同步燈光系統</li>
+
+<li>🟢 側邊乖乖展示艙</li>
+
+<li>🟢 AI 工作站級水冷散熱</li>
+
+<li>🟢 高效能遊戲與創作平台</li>
+
+<li>🟢 限定聯名開機動畫</li>
+
+<li>🟢 工程師信仰加成 +100%</li>
+
+</ul>
+
+</div>
+
+</div>
+
 </section>
 
-<section>
-    <h2>顧客實際使用感想</h2>
+<!-- 功能 -->
 
-    <div class="video-container">
+<section id="features" class="fade">
 
-        <video controls>
-            <source src="InShot_20260611_052131107.mp4" type="video/mp4">
-            您的瀏覽器不支援影片播放。
-        </video>
+<h2 class="section-title">
+特色功能
+</h2>
 
-        <div class="review">
-            ⭐⭐⭐⭐⭐
-            <br><br>
-            「以前電腦常常莫名其妙出問題，
-            換了乖乖聯名主機後，
-            雖然我知道可能只是心理作用，
-            但看到那包乖乖真的安心很多！」
-            <br><br>
-            — 玩家阿哲
-        </div>
+<div class="feature-grid">
 
-        <div class="review">
-            ⭐⭐⭐⭐⭐
-            <br><br>
-            「拿來跑 AI 模型和剪輯影片非常穩定，
-            而且展覽上大家第一眼都被乖乖展示艙吸引。」
-            <br><br>
-            — 設計師小涵
-        </div>
+<div class="feature">
+🟢 穩定BUFF系統
+</div>
 
-    </div>
+<div class="feature">
+⚡ AI運算強化
+</div>
+
+<div class="feature">
+💡 RGB綠光同步
+</div>
+
+<div class="feature">
+🧊 一體式水冷散熱
+</div>
+
+<div class="feature">
+🎮 電競等級效能
+</div>
+
+<div class="feature">
+🥥 乖乖展示艙
+</div>
+
+</div>
+
+</section>
+
+<!-- 影片 -->
+
+<section id="video" class="fade">
+
+<h2 class="section-title">
+顧客實際使用感想
+</h2>
+
+<div class="video-container">
+
+<video controls poster="image_d34ccc6e.png">
+
+<source
+src="InShot_20260611_052131107.mp4"
+type="video/mp4">
+
+</video>
+
+</div>
+
+</section>
+
+<!-- 評價 -->
+
+<section class="fade">
+
+<h2 class="section-title">
+玩家好評
+</h2>
+
+<div class="reviews">
+
+<div class="review">
+
+⭐⭐⭐⭐⭐
+
+<br><br>
+
+「以前總覺得電腦怪怪的，
+自從換成乖乖聯名款後，
+看著展示艙裡的乖乖就很安心。」
+
+</div>
+
+<div class="review">
+
+⭐⭐⭐⭐⭐
+
+<br><br>
+
+「展覽上回頭率超高，
+大家第一眼都在找那包乖乖在哪裡。」
+
+</div>
+
+<div class="review">
+
+⭐⭐⭐⭐⭐
+
+<br><br>
+
+「AI 算圖與影片剪輯非常順暢，
+還附帶精神上的穩定BUFF。」
+
+</div>
+
+</div>
+
+</section>
+
+<!-- 預購 -->
+
+<section class="cta fade">
+
+<h2>
+限量發售 2026 台
+</h2>
+
+<div class="price">
+NT$ 66,666
+</div>
+
+<a href="#" class="btn">
+立即預購
+</a>
+
 </section>
 
 <footer>
-    © 2026 Kuai-PC × 乖乖聯名企劃
-    <br>
-    GreenLight AI Next Edition
+
+© 2026 Kuai-PC × 乖乖 聯名企劃
+
+<br><br>
+
+GreenLight AI Next Edition
+
 </footer>
 
 <script>
-function scrollToProduct(){
-    document.getElementById('product')
-    .scrollIntoView({
-        behavior:'smooth'
-    });
+
+const observer =
+new IntersectionObserver(entries=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.classList.add("show");
+
 }
+
+});
+
+});
+
+document
+.querySelectorAll(".fade")
+.forEach(el=>observer.observe(el));
+
 </script>
 
 </body>
