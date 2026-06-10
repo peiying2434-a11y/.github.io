@@ -1,382 +1,289 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="zh-Hant">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>乖乖科技聯名專案 - 讓你的設備永不當機</title>
-    <style>
-        /* 核心設計風格：綠色乖乖 + 科技黑白 */
-        :root {
-            --kuai-green: #2ecc71;
-            --tech-dark: #1a1a1a;
-            --tech-light: #f5f6fa;
-            --accent-gold: #f1c40f;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>乖乖 × Kuai-PC 聯名限定主機</title>
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: "PingFang TC", "Microsoft JhengHei", sans-serif;
-        }
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Microsoft JhengHei",sans-serif;
+}
 
-        body {
-            background-color: var(--tech-light);
-            color: #333;
-            line-height: 1.6;
-        }
+body{
+    background:#0d1117;
+    color:white;
+    line-height:1.8;
+}
 
-        /* 導覽列 */
-        header {
-            background-color: var(--tech-dark);
-            color: white;
-            padding: 15px 5%;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 3px solid var(--kuai-green);
-        }
+header{
+    background:linear-gradient(135deg,#1faa59,#0f5132);
+    padding:80px 20px;
+    text-align:center;
+}
 
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-            color: var(--kuai-green);
-        }
+header h1{
+    font-size:3rem;
+    margin-bottom:20px;
+}
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin-left: 20px;
-            transition: color 0.3s;
-        }
+header p{
+    font-size:1.2rem;
+    max-width:800px;
+    margin:auto;
+}
 
-        nav a:hover {
-            color: var(--kuai-green);
-        }
+section{
+    max-width:1200px;
+    margin:auto;
+    padding:80px 20px;
+}
 
-        /* 主視覺區 */
-        .hero {
-            background: linear-gradient(135deg, #1a1a1a 0%, #2c3e50 100%);
-            color: white;
-            text-align: center;
-            padding: 100px 20px;
-            border-bottom: 10px solid var(--kuai-green);
-        }
+h2{
+    color:#50fa7b;
+    margin-bottom:30px;
+    font-size:2rem;
+}
 
-        .hero h1 {
-            font-size: 48px;
-            margin-bottom: 20px;
-            color: #ffffff;
-            text-shadow: 0 0 10px var(--kuai-green);
-        }
+.company-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:30px;
+}
 
-        .hero p {
-            font-size: 20px;
-            max-width: 600px;
-            margin: 0 auto 30px;
-        }
+.card{
+    background:#161b22;
+    border:1px solid #2ea043;
+    border-radius:15px;
+    padding:25px;
+}
 
-        .badge {
-            background-color: var(--kuai-green);
-            color: var(--tech-dark);
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-weight: bold;
-            font-size: 14px;
-        }
+.product-showcase{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+    align-items:center;
+}
 
-        /* 區塊通用樣式 */
-        section {
-            padding: 80px 15px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+.product-showcase img{
+    width:100%;
+    border-radius:20px;
+    box-shadow:0 0 25px rgba(80,250,123,.3);
+}
 
-        .section-title {
-            text-align: center;
-            font-size: 32px;
-            margin-bottom: 40px;
-            position: relative;
-            color: var(--tech-dark);
-        }
+.specs ul{
+    list-style:none;
+}
 
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 60px;
-            height: 4px;
-            background-color: var(--kuai-green);
-            margin: 10px auto 0;
-        }
+.specs li{
+    padding:12px;
+    margin-bottom:10px;
+    background:#161b22;
+    border-left:4px solid #50fa7b;
+}
 
-        /* 產品說明區塊 */
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
+.highlight{
+    color:#50fa7b;
+    font-weight:bold;
+}
 
-        .product-card {
-            background: white;
-            border-radius: 10px;
-            padding: 30px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            border-top: 5px solid var(--kuai-green);
-            transition: transform 0.3s;
-        }
+.video-container{
+    background:#161b22;
+    padding:20px;
+    border-radius:20px;
+}
 
-        .product-card:hover {
-            transform: translateY(-5px);
-        }
+video{
+    width:100%;
+    border-radius:15px;
+}
 
-        .product-card h3 {
-            font-size: 22px;
-            margin-bottom: 15px;
-            color: var(--tech-dark);
-        }
+.review{
+    margin-top:25px;
+    padding:20px;
+    background:#0f1720;
+    border-left:4px solid #50fa7b;
+    border-radius:10px;
+}
 
-        /* 聯名款主機商品設計區塊 */
-        .pc-design-container {
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-            display: flex;
-            flex-wrap: wrap;
-            overflow: hidden;
-            border: 2px solid var(--kuai-green);
-        }
+footer{
+    background:#111;
+    text-align:center;
+    padding:30px;
+    color:#999;
+}
 
-        .pc-visual {
-            flex: 1;
-            min-width: 300px;
-            background: linear-gradient(45deg, #111, #222);
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            position: relative;
-        }
+button{
+    margin-top:20px;
+    background:#50fa7b;
+    color:black;
+    border:none;
+    padding:15px 30px;
+    border-radius:50px;
+    cursor:pointer;
+    font-size:1rem;
+    font-weight:bold;
+    transition:.3s;
+}
 
-        .pc-image {
-            width: 100%;
-            max-width: 450px;
-            height: auto;
-            border-radius: 8px;
-            box-shadow: 0 0 20px rgba(46, 204, 113, 0.4);
-            border: 2px solid var(--kuai-green);
-            margin-bottom: 15px;
-        }
+button:hover{
+    transform:translateY(-3px);
+    box-shadow:0 0 15px #50fa7b;
+}
 
-        .pc-info {
-            flex: 1.2;
-            min-width: 350px;
-            padding: 40px;
-        }
+@media(max-width:900px){
 
-        .tech-specs-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-        }
+.product-showcase{
+    grid-template-columns:1fr;
+}
 
-        .tech-specs-table td {
-            padding: 10px;
-            border-bottom: 1px solid #ddd;
-        }
+header h1{
+    font-size:2.2rem;
+}
 
-        .tech-specs-table td:first-child {
-            font-weight: bold;
-            color: var(--tech-dark);
-            width: 30%;
-        }
-
-        .buy-btn {
-            display: inline-block;
-            background-color: var(--kuai-green);
-            color: var(--tech-dark);
-            font-weight: bold;
-            text-decoration: none;
-            padding: 15px 40px;
-            border-radius: 30px;
-            font-size: 18px;
-            transition: all 0.3s;
-            box-shadow: 0 5px 15px rgba(46, 204, 113, 0.4);
-        }
-
-        .buy-btn:hover {
-            transform: scale(1.05);
-            background-color: #27ae60;
-            color: white;
-        }
-
-        /* 公司介紹區塊 */
-        .about-container {
-            display: flex;
-            flex-wrap: wrap;
-            background: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-        }
-
-        .about-text {
-            flex: 1;
-            min-width: 300px;
-            padding: 40px;
-            background: var(--tech-dark);
-            color: #ccc;
-        }
-
-        .about-text h3 {
-            color: white;
-            font-size: 24px;
-            margin-bottom: 20px;
-        }
-
-        .about-brand {
-            flex: 1;
-            min-width: 300px;
-            padding: 40px;
-            background: #fff;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        /* 顧客感想區塊 */
-        .testimonial-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .testimonial-card {
-            background: white;
-            padding: 25px;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-            border-left: 4px solid var(--kuai-green);
-            cursor: pointer;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .testimonial-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(46, 204, 113, 0.15);
-            background-color: #fafdfb;
-        }
-
-        /* 點擊播放的提示小標籤 */
-        .play-hint {
-            position: absolute;
-            bottom: 15px;
-            right: 15px;
-            font-size: 12px;
-            color: var(--kuai-green);
-            font-weight: bold;
-            opacity: 0.7;
-        }
-
-        .testimonial-card:hover .play-hint {
-            opacity: 1;
-        }
-
-        /* 本機影片彈窗遮罩樣式 */
-        .video-modal {
-            display: none;
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.8);
-            z-index: 2000;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
-
-        .modal-content {
-            width: 100%;
-            max-width: 800px;
-            background: #000;
-            border-radius: 10px;
-            position: relative;
-            box-shadow: 0 0 30px rgba(46, 204, 113, 0.5);
-            overflow: hidden;
-        }
-
-        .close-btn {
-            position: absolute;
-            top: -40px; right: 0;
-            color: white;
-            font-size: 28px;
-            cursor: pointer;
-            background: none;
-            border: none;
-        }
-
-        .video-wrapper {
-            position: relative;
-            padding-bottom: 56.25%;
-            height: 0;
-        }
-
-        .video-wrapper video {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: #000;
-        }
-
-        /* 頁尾 */
-        footer {
-            background-color: var(--tech-dark);
-            color: #aaa;
-            text-align: center;
-            padding: 30px 20px;
-            margin-top: 60px;
-            border-top: 3px solid var(--kuai-green);
-            font-size: 14px;
-        }
-    </style>
+}
+</style>
 </head>
 <body>
 
-    <!-- 導覽列 -->
-    <header>
-        <div class="logo">🟢 乖乖科技聯名</div>
-        <nav>
-            <a href="#products">聯名概念</a>
-            <a href="#pc-design">旗艦聯名主機</a>
-            <a href="#about">關於我們</a>
-            <a href="#testimonials">顧客好評</a>
-        </nav>
-    </header>
+<header>
+    <h1>乖乖 × Kuai-PC</h1>
+    <h2>GreenLight AI Next Edition</h2>
 
-    <!-- 主視覺 -->
-    <div class="hero">
-        <span class="badge">COMPUTEX 限量特仕款</span>
-        <h1>機房鎮邪必備・乖乖電腦特仕版</h1>
-        <p>當「綠色椰子乖乖」遇上「頂級次世代伺服器主機」。不只滿足科技人的胃，更完美注入「綠燈不當機」的終極科技信仰。</p>
+    <p>
+        全台首款結合「工程師信仰」與高效能運算的聯名主機。
+        將乖乖文化正式帶入電競與AI工作站領域，
+        讓每一台電腦都能穩定運作、不當機、不藍屏。
+    </p>
+
+    <button onclick="scrollToProduct()">
+        立即了解產品
+    </button>
+</header>
+
+<section>
+    <h2>公司介紹</h2>
+
+    <div class="company-grid">
+
+        <div class="card">
+            <h3>乖乖股份有限公司</h3>
+            <p>
+                台灣知名零食品牌，
+                其綠色乖乖更被廣泛視為工程師、
+                機房與科技業的「穩定運作守護神」。
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Kuai-PC 電腦專賣公司</h3>
+            <p>
+                專注於客製化電競主機、
+                AI工作站與高效能電腦組裝，
+                提供企業與個人用戶最佳運算解決方案。
+            </p>
+        </div>
+
     </div>
+</section>
 
-    <!-- 產品說明區塊 -->
-    <section id="products">
-        <h2 class="section-title">聯名企劃核心</h2>
-        <div class="product-grid">
-            <div class="product-card">
-                <h3>🟢 乖乖綠燈科技包</h3>
-                <p>專為 IT 機房設計的標準包裝。嚴格禁止寫上任何可能引發 BUG 的字樣，正面附帶「專用空白祈福簽名區」，讓工程師寫下伺服器代號，鎮壓一切不乖當機。</p>
-            </div>
-            <div class="product-card">
-                <h3>⌨️ 機械式椰香發光鍵盤</h3>
-                <p>採用特製綠色機械軸體，敲擊時散發淡淡的經典椰子香氣。空白鍵特別印製乖乖人偶圖案，每次敲擊都為代碼進行線上開光加持。</p>
-            </div>
-            <div class="product-card">
-                <h3>🛡️ 科技能量御守貼紙</h3>
+<section id="product">
+    <h2>聯名產品介紹</h2>
 
+    <div class="product-showcase">
+
+        <img src="1000022796.png" alt="乖乖聯名主機">
+
+        <div class="specs">
+
+            <h3 class="highlight">
+                GreenLight AI Next Edition
+            </h3>
+
+            <ul>
+                <li>🟢 限定乖乖綠金屬機殼</li>
+                <li>🟢 RGB 綠光同步燈效</li>
+                <li>🟢 側邊透明乖乖展示艙</li>
+                <li>🟢 AI 工作站等級水冷散熱</li>
+                <li>🟢 高階顯示卡支援 AI 與遊戲</li>
+                <li>🟢 聯名限定開機動畫</li>
+                <li>🟢 工程師認證穩定BUFF +100%</li>
+            </ul>
+
+        </div>
+
+    </div>
+</section>
+
+<section>
+    <h2>為什麼要和乖乖聯名？</h2>
+
+    <div class="card">
+        <p>
+            在台灣科技圈流傳著一個有趣傳說：
+            只要在設備旁放上一包綠色乖乖，
+            機器就會乖乖運作。
+
+            從伺服器機房、半導體設備到學校電腦教室，
+            都能看到綠色乖乖的身影。
+
+            因此 Kuai-PC 與乖乖合作，
+            將這項工程師文化正式設計進主機之中，
+            打造最具台灣特色的聯名電腦。
+        </p>
+    </div>
+</section>
+
+<section>
+    <h2>顧客實際使用感想</h2>
+
+    <div class="video-container">
+
+        <video controls>
+            <source src="InShot_20260611_052131107.mp4" type="video/mp4">
+            您的瀏覽器不支援影片播放。
+        </video>
+
+        <div class="review">
+            ⭐⭐⭐⭐⭐
+            <br><br>
+            「以前電腦常常莫名其妙出問題，
+            換了乖乖聯名主機後，
+            雖然我知道可能只是心理作用，
+            但看到那包乖乖真的安心很多！」
+            <br><br>
+            — 玩家阿哲
+        </div>
+
+        <div class="review">
+            ⭐⭐⭐⭐⭐
+            <br><br>
+            「拿來跑 AI 模型和剪輯影片非常穩定，
+            而且展覽上大家第一眼都被乖乖展示艙吸引。」
+            <br><br>
+            — 設計師小涵
+        </div>
+
+    </div>
+</section>
+
+<footer>
+    © 2026 Kuai-PC × 乖乖聯名企劃
+    <br>
+    GreenLight AI Next Edition
+</footer>
+
+<script>
+function scrollToProduct(){
+    document.getElementById('product')
+    .scrollIntoView({
+        behavior:'smooth'
+    });
+}
+</script>
+
+</body>
+</html>
