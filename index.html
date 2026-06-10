@@ -138,7 +138,7 @@
             color: var(--tech-dark);
         }
 
-        /* 【新新增】聯名款主機商品設計區塊 */
+        /* 聯名款主機商品設計區塊 */
         .pc-design-container {
             background: white;
             border-radius: 15px;
@@ -153,7 +153,7 @@
             flex: 1;
             min-width: 300px;
             background: linear-gradient(45deg, #111, #222);
-            padding: 40px;
+            padding: 20px;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -162,22 +162,14 @@
             position: relative;
         }
 
-        .pc-box-art {
-            width: 200px;
-            height: 280px;
-            background: var(--tech-dark);
-            border: 4px dashed var(--kuai-green);
-            border-radius: 10px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            box-shadow: 0 0 30px rgba(46, 204, 113, 0.3);
-            margin-bottom: 20px;
-        }
-
-        .pc-box-art span {
-            font-size: 50px;
+        .pc-image {
+            width: 100%;
+            max-width: 450px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(46, 204, 113, 0.4);
+            border: 2px solid var(--kuai-green);
+            margin-bottom: 15px;
         }
 
         .pc-info {
@@ -300,7 +292,7 @@
 
     <!-- 主視覺 -->
     <div class="hero">
-        <span class="badge">COMPUTEX 2026 限量特仕款</span>
+        <span class="badge">COMPUTEX 限量特仕款</span>
         <h1>機房鎮邪必備・乖乖電腦特仕版</h1>
         <p>當「綠色椰子乖乖」遇上「頂級次世代伺服器主機」。不只滿足科技人的胃，更完美注入「綠燈不當機」的終極科技信仰。</p>
     </div>
@@ -324,23 +316,27 @@
         </div>
     </section>
 
-    <!-- 【新新增】聯名款主機商品設計專區 -->
+    <!-- 聯名款主機商品設計專區 -->
     <section id="pc-design" style="background-color: #f0fdf4; max-width: 100%; width: 100%;">
         <div style="max-width: 1200px; margin: 0 auto;">
             <h2 class="section-title">聯名款旗艦主機商品設計</h2>
             <div class="pc-design-container">
                 
-                <!-- 左側：主機概念視覺描述 -->
+                <!-- 左側：直接引入上傳的產品圖片 -->
                 <div class="pc-visual">
-                    <div style="position: absolute; top: 15px; left: 15px; background: rgba(46, 204, 113, 0.2); color: var(--kuai-green); padding: 3px 10px; border-radius: 5px; font-size: 12px; font-weight: bold;">CONCEPT DESIGN</div>
-                    <div class="pc-box-art">
-                        <span>🖥️</span>
-                        <div style="color: var(--kuai-green); font-weight: bold; margin-top: 10px; font-size: 14px;">KUAI-PC 2026</div>
-                        <div style="width: 40px; height: 6px; background: var(--kuai-green); border-radius: 3px; margin-top: 5px; animation: pulse 1.5s infinite;"></div>
-                    </div>
-                    <h3 style="margin-bottom: 10px; text-align: center;">GreenLight AI Next Edition</h3>
-                    <p style="font-size: 14px; color: #888; text-align: center; max-width: 280px;">全機身機殼採用客製化「椰香綠」防靜電烤漆，內建獨家專利硬體級防護艙。</p>
+                    <div style="position: absolute; top: 15px; left: 15px; background: rgba(46, 204, 113, 0.2); color: var(--kuai-green); padding: 3px 10px; border-radius: 5px; font-size: 12px; font-weight: bold;">OFFICIAL RENDERING</div>
+                    <img src="kuai-pc.png" alt="乖乖聯名吉祥物旗艦主機" class="pc-image">
+                    <h3 style="margin-bottom: 5px; text-align: center;">GreenLight AI Mascot Edition</h3>
+                    <p style="font-size: 14px; color: #aaa; text-align: center; max-width: 320px;">頂部搭載實體大公仔，結合液晶動態水冷螢幕與獨家乖乖鎮邪防護艙。</p>
                 </div>
 
                 <!-- 右側：主機規格詳細說明 -->
                 <div class="pc-info">
+                    <span style="color: var(--kuai-green); font-weight: bold; font-size: 14px; letter-spacing: 2px;">限量極致工藝</span>
+                    <h3 style="font-size: 28px; margin: 5px 0 15px 0; color: var(--tech-dark);">「極致綠燈」AI 智能超頻水冷主機</h3>
+                    <p style="color: #666; font-size: 15px;">這不是普通的電腦，這是民俗工程學與微電子技術的結晶。我們在側透玻璃機殼內設計了<strong>「實體乖乖專屬防潮避震艙」</strong>，並配備<strong>「經典乖乖吉祥物實體公仔」</strong>，確保您的伺服器隨時處於「完美綠燈狀態」。</p>
+                    
+                    <table class="tech-specs-table">
+                        <tr>
+                            <td>🤖 核心晶片</td>
+                            <td>次世代 AI 智慧運算處理器（內建 Bug 預警除錯指令集）</td>
