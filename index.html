@@ -1,0 +1,289 @@
+html<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>乖乖科技聯名專案 - 讓你的設備永不當機</title>
+    <style>
+        /* 核心設計風格：綠色乖乖 + 科技黑白 */
+        :root {
+            --kuai-green: #2ecc71;
+            --tech-dark: #1a1a1a;
+            --tech-light: #f5f6fa;
+            --accent-gold: #f1c40f;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: "PingFang TC", "Microsoft JhengHei", sans-serif;
+        }
+
+        body {
+            background-color: var(--tech-light);
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* 導覽列 */
+        header {
+            background-color: var(--tech-dark);
+            color: white;
+            padding: 15px 5%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 3px solid var(--kuai-green);
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--kuai-green);
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--kuai-green);
+        }
+
+        /* 主視覺區 */
+        .hero {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2c3e50 100%);
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+            border-bottom: 10px solid var(--kuai-green);
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: #ffffff;
+            text-shadow: 0 0 10px var(--kuai-green);
+        }
+
+        .hero p {
+            font-size: 20px;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        .badge {
+            background-color: var(--kuai-green);
+            color: var(--tech-dark);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        /* 區塊通用樣式 */
+        section {
+            padding: 80px 10px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 40px;
+            position: relative;
+            color: var(--tech-dark);
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: var(--kuai-green);
+            margin: 10px auto 0;
+        }
+
+        /* 產品說明區塊 */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border-top: 5px solid var(--kuai-green);
+            transition: transform 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-card h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: var(--tech-dark);
+        }
+
+        /* 公司介紹區塊 */
+        .about-container {
+            display: flex;
+            flex-wrap: wrap;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+            padding: 40px;
+            background: var(--tech-dark);
+            color: #ccc;
+        }
+
+        .about-text h3 {
+            color: white;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .about-brand {
+            flex: 1;
+            min-width: 300px;
+            padding: 40px;
+            background: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        /* 顧客感想影片區塊 */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 比例 */
+            height: 0;
+            overflow: hidden;
+            max-width: 800px;
+            margin: 0 auto;
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            border: 4px solid var(--kuai-green);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* 頁尾 */
+        footer {
+            background-color: var(--tech-dark);
+            color: #aaa;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 60px;
+            border-top: 3px solid var(--kuai-green);
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 導覽列 -->
+    <header>
+        <div class="logo">🟢 乖乖科技聯名</div>
+        <nav>
+            <a href="#products">產品說明</a>
+            <a href="#about">公司介紹</a>
+            <a href="#testimonials">精選實測影片</a>
+        </nav>
+    </header>
+
+    <!-- 主視覺 -->
+    <div class="hero">
+        <span class="badge">跨界世紀聯名</span>
+        <h1>機房鎮邪必備・乖乖電腦特仕版</h1>
+        <p>當「綠色椰子乖乖」遇上「頂級伺服器主機」。不只滿足科技人的胃，更完美注入「綠燈不當機」的終極科技信仰。</p>
+    </div>
+
+    <!-- 產品說明區塊 -->
+    <section id="products">
+        <h2 class="section-title">聯名產品說明</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <h3>🟢 乖乖綠燈科技版（經典包裝）</h3>
+                <p>專為 IT 機房設計的標準包裝。嚴格禁止寫上任何可能引發 BUG 的字樣，正面附帶「專用空白祈福簽名區」，讓工程師寫下伺服器代號，鎮壓一切不乖當機。</p>
+            </div>
+            <div class="product-card">
+                <h3>🖥️ 聯名全水冷不當機主機</h3>
+                <p>機殼內部預留「乖乖實體擺放專屬防潮艙」，並內建綠色 LED 呼吸燈效。散熱水冷液採用客製「乖乖綠」配方，從硬體層面物理超渡所有系統錯誤。</p>
+            </div>
+            <div class="product-card">
+                <h3>⌨️ 機械式椰香發光鍵盤</h3>
+                <p>採用特製綠色機械軸體，敲擊時散發淡淡的經典椰子香氣。空白鍵特別印製乖乖人偶圖案，每次敲擊都為代碼進行線上開光加持。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 公司介紹區塊 -->
+    <section id="about">
+        <h2 class="section-title">關於聯名品牌</h2>
+        <div class="about-container">
+            <div class="about-text">
+                <h3>傳統零食與尖端科技的量子碰撞</h3>
+                <p><strong>【乖乖大廠】</strong>創立數十年來，不僅是全民最愛的國民零食，更是台灣乃至全球科技產業默默守護機房的「科技神秘學」核心主體。</p>
+                <br>
+                <p><strong>【頂尖電腦團隊】</strong>則專注於極致效能的硬體開發。本次聯名旨在破除迷信與科學的界線，將「民俗工程學」與「電子資訊工程」完美結合，打造出最懂工程師痛點的劃時代產品。</p>
+            </div>
+            <div class="about-brand" style="text-align: center;">
+                <h3 style="color: var(--kuai-green); margin-bottom: 10px;">聯名四大保證</h3>
+                <p>✅ 絕對綠色包裝，絕不誤用黃色/紅色</p>
+                <p>✅ 椰子口味限定，機房香氣四溢</p>
+                <p>✅ 每包皆由工程師親自檢驗無過期</p>
+                <p>✅ 完美相容各類 Windows / Linux / macOS 系統</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 顧客感想影片區塊 -->
+    <section id="testimonials">
+        <h2 class="section-title">顧客實際使用感想影片</h2>
+        <p style="text-align: center; margin-bottom: 30px; color: #666;">來看看百萬網紅與機房主管的瘋狂實測，點擊下方即可直接觀看！</p>
+        
+        <div class="video-container">
+            <!-- 這裡預設嵌入了 YouTube 上最知名的乖乖科技文化介紹影片，您可以自行更換為其他 YouTube 連結 -->
+            <iframe src="https://youtube.com" 
+                    title="乖乖科技文化實測" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    allowfullscreen>
+            </iframe>
+        </div>
+    </section>
+
+    <!-- 頁尾 -->
+    <footer>
+        <p>© 2026 乖乖科技聯名專案小組. All Rights Reserved.</p>
+        <p>本網站純屬創意聯名網頁展示，乖乖好吃，機房保重！</p>
+    </footer>
+
+</body>
+</html>
